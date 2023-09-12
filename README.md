@@ -1,37 +1,36 @@
 # **Banking API**
-### The Banking API provides basic banking functionalities such as depositing and withdrawing money and checking account balances. 
-### It's built using .NET, and features a simple in-memory database to manage account balances.
+* The Banking API provides basic banking functionalities such as depositing and withdrawing money and checking account balances. 
+* It's built using .NET, and features a simple in-memory database to manage account balances.
 
 ## **Features:**
-### Deposit money into an account.
-### Withdraw money from an account.
-### Check account balance.
+1. Deposit money into an account.
+2. Withdraw money from an account.
+3. Check account balance.
 
 ## **Endpoints:**
-### POST /deposit - Deposit a certain amount to a user's account.
-### POST /withdraw - Withdraw a certain amount from a user's account.
-### GET /balance/{userId} - Retrieve the balance of a specific user.
+* POST /deposit - Deposit a certain amount to a user's account.
+* POST /withdraw - Withdraw a certain amount from a user's account.
+* GET /balance/{userId} - Retrieve the balance of a specific user.
 
 ## **Validation:**
 ### **Deposit:**
-Negative amounts or zero are not allowed.
-Cannot deposit more than $10,000 in a single transaction.
-Cannot withdraw more than 90% of an account balance.
+1. Negative amounts or zero are not allowed.
+2. Cannot deposit more than $10,000 in a single transaction.
+3. Cannot withdraw more than 90% of an account balance.
 
 ## **Withdrawal:**
-Withdrawals should not result in negative balances.
-Withdrawal amounts cannot be negative.
+1. Withdrawals should not result in negative balances.
+2. Withdrawal amounts cannot be negative.
 
 ## **Testing:**
 The API uses SpecFlow for BDD testing.
 
 ## **Test Scenarios:**
+* Test deposit functionality with valid amounts.
+* Test deposit functionality with amounts greater than $10,000.
+* Test withdrawal functionality to ensure it's not possible to have negative balances.
 
-Test deposit functionality with valid amounts.
-Test deposit functionality with amounts greater than $10,000.
-Test withdrawal functionality to ensure it's not possible to have negative balances.
-
-## Usage:
+## **Usage:**
 
 ### Deposit:
 
@@ -59,6 +58,6 @@ Test withdrawal functionality to ensure it's not possible to have negative balan
 
 ## **Future Improvements:**
 
-Integration with a persistent database for robust data storage.
-Implement authentication and authorization to ensure secure transactions.
-Add interest rate calculations.
+* Integration with a persistent database for robust data storage.
+* Implement authentication and authorization to ensure secure transactions.
+* Add interest rate calculations.
