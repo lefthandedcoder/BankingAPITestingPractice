@@ -1,0 +1,7 @@
+﻿version: '3.4'
+services:
+  bankingapi:
+    image: bankingapi
+    build:
+      context: .
+      dockerfile: BankingAPI/Dockerfile
