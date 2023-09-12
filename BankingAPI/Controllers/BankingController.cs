@@ -44,9 +44,9 @@ namespace BankingAPI.Controllers
                 return NotFound("User not found.");
 
             // Check if amount is negative
-            if (model.Amount < 0)
+            if (model.Amount <= 0)
             {
-                return BadRequest("Withdrawal amount cannot be negative.");
+                return BadRequest("Withdrawal amount cannot be negative or zero.");
             }
 
             // Error handling for invalid input

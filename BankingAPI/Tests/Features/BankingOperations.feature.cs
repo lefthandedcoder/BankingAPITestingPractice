@@ -251,19 +251,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 31
   testRunner.Then("the withdrawal should be declined with message \"Withdrawal amount cannot be negat" +
-                        "ive.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "ive or zero.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User 7 Attempts to Deposit a Negative Amount")]
-        public void User7AttemptsToDepositANegativeAmount()
+        [NUnit.Framework.DescriptionAttribute("User 7 Attempts to Withdraw a Zero Amount")]
+        public void User7AttemptsToWithdrawAZeroAmount()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User 7 Attempts to Deposit a Negative Amount", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User 7 Attempts to Withdraw a Zero Amount", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 33
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -278,11 +278,11 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.Given("user 7 has a balance of \"$1000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 35
-  testRunner.When("user 7 deposits \"$-50\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("user 7 withdraws \"$0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 36
-  testRunner.Then("the deposit should be declined with message \"Cannot deposit a negative amount or " +
-                        "zero.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("the withdrawal should be declined with message \"Withdrawal amount cannot be negat" +
+                        "ive or zero.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -309,7 +309,7 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.Given("user 8 has a balance of \"$1000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 40
-  testRunner.When("user 8 deposits \"$0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("user 8 deposits \"$-50\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 41
   testRunner.Then("the deposit should be declined with message \"Cannot deposit a negative amount or " +
@@ -320,12 +320,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User 9 Withdraws a Valid Decimal Amount")]
-        public void User9WithdrawsAValidDecimalAmount()
+        [NUnit.Framework.DescriptionAttribute("User 9 Attempts to Deposit a Zero Amount")]
+        public void User9AttemptsToDepositAZeroAmount()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User 9 Withdraws a Valid Decimal Amount", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User 9 Attempts to Deposit a Zero Amount", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 43
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -340,22 +340,23 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.Given("user 9 has a balance of \"$1000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 45
-  testRunner.When("user 9 withdraws \"$50.75\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("user 9 deposits \"$0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 46
-  testRunner.Then("the new balance for user 9 should be \"$949.25\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("the deposit should be declined with message \"Cannot deposit a negative amount or " +
+                        "zero.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User 10 Deposits a Valid Decimal Amount")]
-        public void User10DepositsAValidDecimalAmount()
+        [NUnit.Framework.DescriptionAttribute("User 10 Withdraws a Valid Decimal Amount")]
+        public void User10WithdrawsAValidDecimalAmount()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User 10 Deposits a Valid Decimal Amount", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User 10 Withdraws a Valid Decimal Amount", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 48
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -370,10 +371,40 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.Given("user 10 has a balance of \"$1000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 50
-  testRunner.When("user 10 deposits \"$50.75\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("user 10 withdraws \"$50.75\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 51
-  testRunner.Then("the new balance for user 10 should be \"$1050.75\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("the new balance for user 10 should be \"$949.25\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User 11 Deposits a Valid Decimal Amount")]
+        public void User11DepositsAValidDecimalAmount()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User 11 Deposits a Valid Decimal Amount", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 53
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 54
+  testRunner.Given("user 11 has a balance of \"$1000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 55
+  testRunner.When("user 11 deposits \"$50.75\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 56
+  testRunner.Then("the new balance for user 11 should be \"$1050.75\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

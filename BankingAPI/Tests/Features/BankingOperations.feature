@@ -28,24 +28,29 @@ Scenario: User 5 Tries a Large Single Transaction Deposit
 Scenario: User 6 Attempts to Withdraw a Negative Amount
   Given user 6 has a balance of "$1000"
   When user 6 withdraws "$-50"
-  Then the withdrawal should be declined with message "Withdrawal amount cannot be negative."
+  Then the withdrawal should be declined with message "Withdrawal amount cannot be negative or zero."
 
-Scenario: User 7 Attempts to Deposit a Negative Amount
+Scenario: User 7 Attempts to Withdraw a Zero Amount
   Given user 7 has a balance of "$1000"
-  When user 7 deposits "$-50"
-  Then the deposit should be declined with message "Cannot deposit a negative amount or zero."
+  When user 7 withdraws "$0"
+  Then the withdrawal should be declined with message "Withdrawal amount cannot be negative or zero."
 
 Scenario: User 8 Attempts to Deposit a Negative Amount
   Given user 8 has a balance of "$1000"
-  When user 8 deposits "$0"
+  When user 8 deposits "$-50"
   Then the deposit should be declined with message "Cannot deposit a negative amount or zero."
 
-Scenario: User 9 Withdraws a Valid Decimal Amount
+Scenario: User 9 Attempts to Deposit a Zero Amount
   Given user 9 has a balance of "$1000"
-  When user 9 withdraws "$50.75"
-  Then the new balance for user 9 should be "$949.25"
+  When user 9 deposits "$0"
+  Then the deposit should be declined with message "Cannot deposit a negative amount or zero."
 
-Scenario: User 10 Deposits a Valid Decimal Amount
+Scenario: User 10 Withdraws a Valid Decimal Amount
   Given user 10 has a balance of "$1000"
-  When user 10 deposits "$50.75"
-  Then the new balance for user 10 should be "$1050.75"
+  When user 10 withdraws "$50.75"
+  Then the new balance for user 10 should be "$949.25"
+
+Scenario: User 11 Deposits a Valid Decimal Amount
+  Given user 11 has a balance of "$1000"
+  When user 11 deposits "$50.75"
+  Then the new balance for user 11 should be "$1050.75"
