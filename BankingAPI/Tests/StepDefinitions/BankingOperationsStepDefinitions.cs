@@ -12,7 +12,7 @@ namespace BankingAPI.StepDefinitions
     {
         private int _currentUserId;
         private IActionResult _result;
-        private BankingController _controller = new BankingController(); // Assuming you have a controller named BankingController
+        private BankingController _controller = new BankingController();
 
         [BeforeScenario]
         public void Setup()
