@@ -16,11 +16,11 @@
 ### **Deposit:**
 1. Negative amounts or zero are not allowed.
 2. Cannot deposit more than $10,000 in a single transaction.
-3. Cannot withdraw more than 90% of an account balance.
 
 ## **Withdrawal:**
 1. Withdrawals should not result in negative balances.
-2. Withdrawal amounts cannot be negative.
+2. Withdrawal amounts cannot be negative or zero.
+3. Cannot withdraw more than 90% of an account balance.
 
 ## **Testing:**
 The API uses SpecFlow for BDD testing.
